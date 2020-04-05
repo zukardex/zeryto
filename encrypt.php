@@ -71,13 +71,7 @@ function enc($a, $key){
 		$keysum += $keystr[$j];
 	}
 	
-/*	//Randomize the results- modify2
-	for($i=2; $i<=10; $i++){
-		if(strlen($a) % $i){
-			$len_mod=  $i;
-		}
-	}
-*/
+
 
 
 //MAKE $modulo value variable along with strlen($a) to get randomized results
@@ -90,32 +84,7 @@ function enc($a, $key){
 		$temp_sin *= 10;
 		$int_sin= (int) $temp_sin;
 	}
-/*
-		if($len_mod % 2){
-			for($i=0; $int_sin <= 0; $i++){
-				$temp_sin *= 10;
-				$int_sin= (int) $temp_sin;
-			}
-		}
-		if($len_mod % 3){
-			for($i=0; $int_sin <=10; $i++){
-				$temp_sin *= 10;
-				$int_sin= (int) $temp_sin;
-			}
-		}
-		if($len_mod % 5){
-			for($i=0; $int_sin <= 100; $i++){
-				$temp_sin *= 10;
-				$int_sin= (int) $temp_sin;
-			}
-		}
-		if($len_mod % 7){
-			for($i=0; $int_sin <= 1000; $i++){
-				$temp_sin *= 10;
-				$int_sin= (int) $temp_sin;
-			}
-		}
-*/
+
 	echo '<p>plain=' . strlen($a);
 	$z_temp= ($int_sin * $key)/strlen($a);
 	$z=(int) $z_temp;
